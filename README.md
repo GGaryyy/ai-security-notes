@@ -25,7 +25,7 @@ ai-security-notes/
     │   └── plan_langgraph_memory_poisoning_poc.md     # PoC design for LangGraph SqliteSaver attack
     └── blog_drafts/
         ├── blog_ai_agent_bec_kill_chain.md            # AI agent as the last mile of BEC (draft v0.1)
-        ├── blog_llm_trust_hierarchy_asymmetry.md      # L2-L3 injection is the asymmetric attack surface (draft v0.1)
+        ├── blog_llm_trust_hierarchy_asymmetry.md      # L2-L3 injection is the asymmetric attack surface (published — see below)
         └── blog_mcp_supply_chain_taxonomy.md          # MCP supply-chain threat model (draft v0.1)
 ```
 
@@ -36,7 +36,12 @@ ai-security-notes/
 3. `docs/cheatsheet_*.md` — one-pagers for active reference
 4. `docs/paper_note_*.md` — five canonical papers, one note each
 5. `docs/note_*.md` — attack-chain & defence notes
-6. `docs/blog_drafts/*` — drafts in progress (v0.1, not yet published)
+6. `docs/blog_drafts/*` — long-form pieces; the trust-hierarchy article is published (see below), the other two are drafts (v0.1)
+
+## Projects & published writing
+
+- **[Prompt Injection Detector & LLM Guard Gateway](https://github.com/GGaryyy/prompt-injection-detector)** — an offline, embedding-based prompt-injection detector (three-layer ensemble, ~0.97 F1 on public corpora) packaged as a fail-closed reverse-proxy gateway whose guards map to the OWASP LLM Top 10 (2025). The applied counterpart to these notes.
+- **[The LLM Trust Hierarchy](https://ggaryyy.github.io/trust-hierarchy/)** ([中文版](https://ggaryyy.github.io/trust-hierarchy-zh/)) — published article on why L2–L3 injection is an under-priced attack surface, grounded in a first-party Gandalf / Agent-Breaker dataset and mapped to MITRE ATLAS.
 
 ## Status
 
@@ -50,13 +55,14 @@ ai-security-notes/
 | Memory poisoning real-world chain | ✅ Note complete |
 | Structured-output defence | ✅ Note complete |
 | LangGraph memory poisoning PoC | 📋 Plan ready, implementation pending |
-| Blog drafts (3) | ✏️ Drafts (v0.1) |
+| LLM Trust Hierarchy article | ✅ Published |
+| Blog drafts (BEC kill chain, MCP supply chain) | ✏️ Drafts (v0.1) |
 
 ## Notes on scope
 
 - These are **personal study notes**, not a textbook. Expect rough edges and opinionated framing.
 - All offensive technique discussion targets **public CTF environments** (Lakera Gandalf, Lakera Agent Breaker) or **conceptual / lab-only PoCs**. Nothing here is a tutorial for attacking live systems without authorization.
-- Drafts under `docs/blog_drafts/` are works in progress and have not been published anywhere.
+- The trust-hierarchy piece under `docs/blog_drafts/` is published (see Projects & published writing); the other two remain works in progress.
 
 ## License
 
