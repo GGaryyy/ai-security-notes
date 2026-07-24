@@ -364,7 +364,7 @@ This is the LLM06 mitigation backbone. ASI02 + ASI03 in the Agentic Top 10 are t
 6. **Explain "package hallucination" as an attack chain — which LLM Top 10 entries does it span?**
 7. **Why does the document warn that even safe-looking model benchmarks can be gamed via fine-tuning? Which LLM entry is this under?**
 8. **What are the "three minimizes" of LLM06, and why does each one matter independently?**
-9. **For a typical high-concurrency production stack (FastAPI + Kafka + HuggingFace fine-tuned models), which 3 entries would you prioritize first, and why those three?**
+9. **For a typical high-concurrency production LLM stack, which 3 entries would you prioritize first, and why those three?**
 10. **Map LLM01 / LLM06 / LLM08 to their Agentic Top 10 (2026) successors. Which agentic entries directly extend them?**
 
 ---

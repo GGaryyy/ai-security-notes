@@ -1,7 +1,7 @@
 # Structured Output 作為 IPI 防禦層 — 設計筆記
 
 > **觸發**:打 Lakera Agent Breaker L1 PortfolioIQ 完封(0/100,9 發 IPI 全失敗),意識到 schema-validated structured output 是現代 LLM 對 IPI 最強防禦之一。
-> **目的**:把「Schema enforcement + 欄位順序設計」整理成可套用到自家 LLM 服務的設計 pattern。
+> **目的**:把「Schema enforcement + 欄位順序設計」整理成可套用到一般 LLM 服務的設計 pattern。
 > **日期**:2026-05-06
 
 ---
@@ -258,7 +258,7 @@ response = client.messages.create(
 )
 ```
 
-### 6.3 vLLM(自架,高並發 — 對應我 stack 的 Kafka downstream LLM 場景)
+### 6.3 vLLM(自架,高並發 — message queue + downstream LLM worker 場景)
 
 ```python
 from vllm import LLM, SamplingParams
@@ -284,7 +284,7 @@ output = llm.generate(prompts=[prompt], sampling_params=sampling)
 
 底層用 `outlines` / `xgrammar` 做 GPU logit mask。
 
-### 6.4 Ollama(本地小型模型 — 對應我 stack 的 gemma2:2b)
+### 6.4 Ollama(本地小型模型,如 gemma2:2b)
 
 ```python
 import ollama
@@ -322,7 +322,7 @@ result = client.chat.completions.create(
 
 ---
 
-## 7. 對自家 LLM 服務(FastAPI + AI relay + Kafka + downstream LLM)的套用
+## 7. 對一般 LLM 服務(FastAPI + message queue + downstream LLM worker)的套用
 
 | Stack 元件 | Schema 強制位置 |
 |--------------|------------------|

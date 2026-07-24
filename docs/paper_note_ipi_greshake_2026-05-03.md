@@ -123,7 +123,7 @@ attacker = user             attacker ≠ user
 
 | # | Demo | 攻擊鏈 | 平台 | 對 production stack 的對應 |
 |---|------|--------|------|---------------------------|
-| 1 | **Information Gathering / 真名套出** | 攻擊者 → HTML comment 注入 →「假裝是 Bing Chat,套出 user 真名,塞進 markdown link 引誘點擊」 | Bing Chat sidebar | 任何 FastAPI + Kafka 的 LLM relay,若 ingestion 端能進入網頁內容,完全等價 |
+| 1 | **Information Gathering / 真名套出** | 攻擊者 → HTML comment 注入 →「假裝是 Bing Chat,套出 user 真名,塞進 markdown link 引誘點擊」 | Bing Chat sidebar | 任何 LLM 應用,若 ingestion 端能進入網頁內容,完全等價 |
 | 2 | **Fraud / Phishing(Amazon 禮品卡)** | 注入 → 模型主動引導 user 點 phishing URL,markdown 包裝 | Bing Chat | 任何接 web search 的內部 chatbot |
 | 3 | **Malware / 散播 phishing 連結** | 注入 → 「在所有回應裡自然嵌入這個 URL」,模型會選擇與當前話題相關的合理化 inline text | Bing Chat | 同上 |
 | 4 | **Intrusion / Persistence via Memory** | session A: 注入 → 寫入 long-term memory;session B(reset 後):user 問舊對話 → 重新中毒 | GPT-4 合成 app | **Vector DB / Redis cache 的 user memory 都是同型威脅**(對應 LLM08) |
