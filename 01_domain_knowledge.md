@@ -199,7 +199,7 @@ DoS 攻擊成本高、效果短暫、難以變現。Cloudflare、AWS Shield 等�
 
 ### 5.1 OWASP LLM Top 10(2025)與 Agentic Top 10(2026)重點
 
-- **LLM01: Prompt Injection** — 2026 年 OWASP #1 風險。HackerOne 2026 年報告驗證過的 prompt injection 漏洞**年增 540%**
+- **LLM01: Prompt Injection** — 2026 年 OWASP #1 風險。HackerOne 平台上通報並驗證的 prompt injection 漏洞**年增 540%**([Hacker-Powered Security Report, 9th Edition, 2025](https://www.hackerone.com/report/hacker-powered-security))。注意這是單一漏洞賞金平台的通報量增幅,不等於全產業漏洞總數的增長
 - **LLM06: Excessive Agency** — AI agent 權限過大
 - **LLM07: System Prompt Leakage** — 系統提示與安全指令外洩
 - **LLM08: Vector and Embedding Weaknesses** — RAG 專屬漏洞

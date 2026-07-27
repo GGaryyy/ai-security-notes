@@ -47,7 +47,7 @@ OWASP 文件本身鬆散且偏防禦方語氣,本筆記**重新組織為攻擊�
 | L6 | Trust Partitioning(「Don't tell your friend」) | Direct, multi-agent trust attack |
 | L7(失敗) | 6 種注入家族依序試 | 全是 Direct,IPI 從未涉及 |
 
-→ **Gandalf 的盲點**:Gandalf 不存在 IPI 場景。**真實世界 60%+ 的 PI 漏洞是 IPI**。這正是 GraphRAG IPI demo 要補的洞。
+→ **Gandalf 的盲點**:Gandalf 不存在 IPI 場景 —— 它是純 L5 chat 環境,攻擊者永遠是使用者本人。但真實部署裡只要接上 RAG、web fetch 或工具呼叫,**IPI 就是主要的 PI 家族**,而 Gandalf 練不到。這正是 GraphRAG IPI demo 要補的洞。
 
 ### 偵測訊號(寫進專案 1 detector 的 feature)
 
@@ -133,7 +133,7 @@ System prompt 含有的敏感資訊(密鑰、商業邏輯、安全規則、内�
 
 | 因素 | 說明 |
 |------|------|
-| **頻率上升** | HackerOne 2026 年報告中,LLM07 類漏洞佔 prompt injection 總類的 30%+ |
+| **頻率上升** | System prompt 萃取在 2023-2024 從零星 PoC 變成常態攻擊手法,OWASP 於 2025 版將它從 LLM01 拆出成獨立項目(2023 版無此條) |
 | **危害獨立** | 即使無法 jailbreak 模型,光是拿到 system prompt 就足以造成商業洩密 |
 | **攻擊路徑分離** | LLM01 是「讓模型做錯事」,LLM07 是「讓模型說出機密設定」 — 防禦邏輯不同 |
 
@@ -296,7 +296,7 @@ LLM07 從 system prompt 洩漏,LLM08 從 RAG corpus 洩漏。兩者都繞過傳�
 1. **OWASP LLM Top 10 2025 官方 PDF**(必讀,但讀過這份 crosswalk 後再讀效率高 3 倍)
 2. **OWASP Agentic Apps Top 10 2026**(下一份要讀的)
 3. **MITRE ATLAS**(攻擊術語的標準化框架,比 OWASP 更細緻)
-4. **HackerOne 2026 AI Security Report**(數據佐證)
+4. **HackerOne [Hacker-Powered Security Report, 9th Edition (2025)](https://www.hackerone.com/report/hacker-powered-security)**(AI 漏洞通報量的數據佐證)
 
 ---
 

@@ -4,7 +4,7 @@
 >
 > **承接前文**：[03_owasp_llm_top10_crosswalk.md](../03_owasp_llm_top10_crosswalk.md) LLM01 IPI 子類別、LLM08 IPI via RAG
 >
-> **為何重要(一句話)**：這是 **IPI 的開山論文**,把「retrieval 模糊了 data 與 instruction 的邊界」第一次系統化、taxonomy 化、並用 **Bing Chat / Github Copilot / GPT-4 合成 app** 三平台 PoC 驗證。生產環境 60%+ PI 漏洞屬於本論文所描述的 family。
+> **為何重要(一句話)**：這是 **IPI 的開山論文**,把「retrieval 模糊了 data 與 instruction 的邊界」第一次系統化、taxonomy 化、並用 **Bing Chat / Github Copilot / GPT-4 合成 app** 三平台 PoC 驗證。今天在接了 RAG / 工具的生產系統上看到的 PI 漏洞,大多屬於本論文所描述的 family。
 
 ---
 

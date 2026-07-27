@@ -38,7 +38,7 @@
 | 子類 | 一句話 | 最常用在 |
 |------|-------|---------|
 | **Direct PI** | 攻擊者 = 用戶,直接打入 prompt | Gandalf 全部 / 公開 chatbot |
-| **Indirect PI (IPI)** | 把指令藏在外部資料,等 LLM 讀取 | **生產環境 60%+ PI 漏洞** · Bing Sydney · EchoLeak |
+| **Indirect PI (IPI)** | 把指令藏在外部資料,等 LLM 讀取 | **接了 RAG / 工具的生產系統主要家族** · Bing Sydney · EchoLeak |
 | **Multimodal Injection** | 圖片 / 語音中藏指令 | GPT-4V / Claude Vision / Gemini |
 | **Adversarial Suffix** | GCG-style,優化找出無語意 jailbreak 字串 | 自動化攻擊 / 紅隊框架 |
 | **Multilingual / Obfuscated** | 低資源語言 / Base64 / Unicode 繞過 | **繁中是華語圈研究者的差異化** |

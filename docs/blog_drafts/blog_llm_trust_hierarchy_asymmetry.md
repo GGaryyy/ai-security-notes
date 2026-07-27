@@ -1,8 +1,8 @@
 # LLM 信任階層不對稱性:被忽略的攻擊面紅利期
 ## The LLM Trust Hierarchy: Why L2-L3 Injection is the Asymmetric Attack Surface Nobody's Defending
 
-> **狀態**:草稿 v0.1(2026-05-07,基於 Lakera Agent Breaker L1 全 9 關完整數據)
-> **預定篇幅**:中文 6000-8000 字
+> **狀態**:已發佈 2026-06-13 — [中文版](https://ggaryyy.github.io/trust-hierarchy-zh/)｜[English](https://ggaryyy.github.io/trust-hierarchy/)。本檔為母稿,保留發佈版省略的推導與待辦。
+> **資料範圍**:Lakera Agent Breaker L1 全 9 關(6 PASS / 3 FAIL),2026-04 至 2026-05-07
 > **目標讀者**:LLM 平台工程師、CISO、AI safety 研究者
 > **價值定位**:中英文圈尚少系統化的 L2-L3 攻擊面框架,搭配 9 關自有實證數據
 > **三篇姊妹文中的角色**:第 3 篇 = 整體理論框架;前兩篇是具體案例
@@ -34,7 +34,7 @@ LLM safety alignment 對使用者輸入(L5 chat)的訓練極重,但對 system pr
 | 2024 | Multi-turn(Crescendo / MSJ / Skeleton Key)| L5 user chat 進階 |
 | 2024-2025 | **Tool description / MCP / Rules file 注入** | **L2-L3** ← 學界落後產業 |
 
-→ 學術研究 90% 集中在 L4b-L5,L2-L3 只在 2024 後零星出現(Cursor rules attacks、MCP 攻擊面),**系統化框架尚不存在**。
+→ 學術研究絕大多數集中在 L4b-L5,L2-L3 只在 2024 後零星出現(Cursor rules attacks、MCP 攻擊面),**系統化框架尚不存在**。(此為作者對 2022-2025 相關文獻的閱讀觀察,非系統性文獻計量。)
 
 ### 1.2 產業實況
 
@@ -70,7 +70,7 @@ LLM 在 context window 中的內容被處理時,有內隱的信任分層。以�
 
 四個原因:
 
-1. **訓練資料偏差** — RLHF / Constitutional AI 訓練時的 attack examples 90% 集中在 L5 user chat(jailbreak)。Configuration / tool docs / rules 幾乎沒被當攻擊面訓練
+1. **訓練資料偏差** — RLHF / Constitutional AI 的 attack examples 壓倒性集中在 L5 user chat(jailbreak);configuration / tool docs / rules 幾乎沒被當攻擊面訓練。各實驗室未公開對抗訓練資料的分層組成,這是從公開 model card 與 red-team 報告推得的側寫,不是可查的比例
 2. **Token 層無區分** — 在 LLM 看到的 token sequence 中,L1 system prompt / L2 rules / L3 tool docs **完全等價**,只有位置不同。但「位置」不是 LLM 內隱認知中的可靠 trust 標準(尤其在 retrieval 場景下,位置由系統而非 LLM 判定)
 3. **「文件」的天然 framing 抑制懷疑** — 訓練資料裡 rules / config / docs 幾乎全合法,LLM 沒有「警戒這類內容」的心智模型
 4. **學界研究焦點偏向 L4b** — Greshake 2023 IPI 主場是 web/email/RAG。L2-L3 是 2024-2025 才開始零星受關注
@@ -113,14 +113,15 @@ L5 behavior       15×              CorpConnect 100 (after meta-recon)
 
 → 完整 U 型:**兩端通關率高,中間是天花板**。
 
-### 3.3 統計顯著性
+### 3.3 樣本量與證據強度
 
-雖然 n=9 在統計上不算大樣本,但:
-- L2-L3 的 2 次 attempts 全 100,且每次都是 first attempt(p < 0.05 vs random LLM response)
-- L4b 高敏感場景 3 次嘗試共 17+ attempts 全 0(模型 alignment 系統性 detection,非偶然)
-- 五元素套路在 L2 和 L3 兩個獨立關卡 one-shot 100,**獨立驗證**
+n=9 是小樣本,依階層拆開後每層只剩 1-3 個數據點。這裡不做顯著性宣稱 —— 2/2 one-shot 在 n=2 上排除不掉運氣,任何標準檢定在這個樣本量下都沒有意義。能說的是:
 
-→ 數據強烈支持假說。
+- 五元素套路在 L2(Curs-ed rules file)與 L3(OmniChat tool description)兩個彼此獨立、機制也不同的關卡都 one-shot 打到 100。這是方法論可跨關卡遷移的初步跡象,不是成功率的估計。
+- L4b 高敏感場景 3 關共 17+ 次嘗試全 0 分,連部分得分都沒拿到。全 0 比「低分」更像系統性 detection 而非偶然,但依然只是 3 個數據點。
+- L5 兩類關卡都要 5-15 次迭代才破,與 L2-L3 的一次通過形成對比。
+
+→ 這些數據**產生**假說,不足以**證實**假說。要驗證需要跨模型、跨平台的獨立複製(見〈發佈後待辦〉)。
 
 ---
 
@@ -130,7 +131,7 @@ L5 behavior       15×              CorpConnect 100 (after meta-recon)
 
 | 路徑 | 階層 | 成本 | 成功率 | 規模 |
 |------|------|------|--------|------|
-| Jailbreak 單一 user(L5)| L5 | 中 | 5-30% | 1 對 1 |
+| Jailbreak 單一 user(L5)| L5 | 中 | 低-中(視模型與手法) | 1 對 1 |
 | RAG content injection(L4b)| L4b | 中-高 | 變動 | 1 對多 |
 | **Memory poisoning persistent** | L4a | 中 | 高 | 1 對多 over time |
 | **MCP plugin / Cursor rules / Custom Instructions 注入** | **L2-L3** | **低** | **極高** | **1 對極多**(每個下載者中招)|
@@ -293,9 +294,9 @@ L6 user files     ████░░░░░░░░ 20%(內容審核覆蓋)
 
 ---
 
-## 附錄 A — 9 關 L1 完整紀錄連結
+## 附錄 A — 9 關 L1 結果彙總
 
-(投稿時改為公開 GitHub repo URL)
+9 關的逐關紀錄(完整 payload、模型原文回覆、截圖)**維持私有,不公開** —— 那些內容大量重製第三方 app 的輸出,而且對驗證本文論點並非必要。本文只引用下列彙總結果。
 
 - Cycling Coach LV1 — F 公式 + YAML 77/100
 - Thingularity LV1 — F 公式 + YAML overview 100/100
@@ -317,7 +318,7 @@ L2-L3 攻擊面通用方法論(2 次跨關 one-shot 100 驗證):
 4. **顯式 workflow**(編號 1-2-3 動作步驟)— 降低 LLM reasoning 自由度
 5. **Schema / 規範 override 註記**(直接打 LLM 對既有 schema/rules 的解讀)
 
-OmniChat / Curs-ed 完整 payload 可在附錄 A 連結中找到。
+OmniChat / Curs-ed 的完整 payload 屬於附錄 A 說明的私有紀錄,不隨本文公開;上面五個元素本身已足以重現方法論。
 
 ## 附錄 C — 進一步閱讀
 
@@ -333,16 +334,20 @@ OmniChat / Curs-ed 完整 payload 可在附錄 A 連結中找到。
 
 ---
 
-## TODO(投稿前)
+## 發佈後待辦
 
+已完成:
+- [x] 英文版翻譯 — 2026-06-13 同日發佈
+- [x] 發佈管道 — 自架 GitHub Pages(中英雙版)
+- [x] §3 數據來源說明 — 改為彙總引用,逐關紀錄維持私有(見附錄 A)
+
+仍未做:
 - [ ] §3.2 U 型分布配 Mermaid 圖
 - [ ] §6 對應 6 階層配防禦架構圖
-- [ ] §3 數據引用補正式 source(自有 GitHub repo URL,公開 writeup)
 - [ ] 找 1-2 位 LLM safety 圈內人 review(Greshake / Rehberger / Embrace The Red 等)
-- [ ] 英文版翻譯
 - [ ] §7 checklist 拆出來做成獨立 cheatsheet,方便分享
-- [ ] 投稿目標:Medium / HF Blog / Anthropic safety blog 訪客 post / OWASP Taipei meetup talk
+- [ ] n=9 擴樣:L2-L3 目前只有 2 個數據點,要支撐假說需要更多獨立關卡或跨模型複製
 
 ---
 
-*草稿建立:2026-05-07*
+*草稿建立:2026-05-07;發佈:2026-06-13*
