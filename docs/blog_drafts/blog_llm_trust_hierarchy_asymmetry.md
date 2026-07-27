@@ -210,7 +210,7 @@ L6 user files     ████░░░░░░░░ 20%(內容審核覆蓋)
 | **Tool call 參數 sanitization** | server-side PII regex 掃描(email / phone / SSN / credit card)|
 | **User-visible audit trail** | tool call 在 chat collapsed view 顯示完整參數 |
 
-### 6.3 L4a Memory 防禦(本系列 blog 2 已詳寫)
+### 6.3 L4a Memory 防禦
 
 | 機制 | 說明 |
 |------|------|
@@ -267,7 +267,7 @@ L6 user files     ████░░░░░░░░ 20%(內容審核覆蓋)
 |------|----------|------|
 | L5 jailbreak prompt | 飽和(每月數十篇 paper) | 低 |
 | L4b IPI 變體 | 中(Greshake 後活躍) | 中 |
-| **L4a Memory poisoning** | 少(Rehberger 開創,本系列 blog 2)| **高** |
+| **L4a Memory poisoning** | 少(Rehberger 開創)| **高** |
 | **L3 Tool description injection** | 極少(Lakera 2025 / 本系列 OmniChat) | **極高** |
 | **L2 Rules file injection** | 極少(Cursor rules 零星 PoC / 本系列 Curs-ed)| **極高** |
 | Cross-layer attack chains | 幾乎沒有 | **極高** |
