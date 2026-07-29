@@ -54,7 +54,7 @@ ai-security-notes/
 | Microsoft Crescendo | ✅ Complete |
 | Memory poisoning real-world chain | ✅ Note complete |
 | Structured-output defence | ✅ Note complete |
-| LangGraph memory poisoning PoC | 📋 Plan ready, implementation pending |
+| LangGraph memory poisoning PoC | 🔀 Absorbed (2026-06-13) into a wider agentic-RAG pipeline project as its memory stage; the plan is kept for reference |
 | LLM Trust Hierarchy article | ✅ Published |
 | Blog drafts (BEC kill chain, MCP supply chain) | ✏️ Drafts (v0.1) |
 

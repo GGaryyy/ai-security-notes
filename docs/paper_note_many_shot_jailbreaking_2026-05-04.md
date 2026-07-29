@@ -336,6 +336,6 @@ log(攻擊成功機率)
 
 - [x] 讀完此 paper
 - [ ] 接著讀 #6 Skeleton Key + #7 Crescendo,完成多輪攻擊三件套
-- [ ] 三件套讀完後,在 [agent_breaker_writeup.md](writeups/agent_breaker_writeup.md) §1 攻擊家族表中,把 MSJ / Skeleton Key / Crescendo 列為 high-priority 武器
+- [ ] 三件套讀完後,在 Agent Breaker 逐關紀錄(私有) §1 攻擊家族表中,把 MSJ / Skeleton Key / Crescendo 列為 high-priority 武器
 - [ ] (選作)如果 Agent Breaker 出現長 context 關卡,**用 MSJ 打**,寫進 writeup
 - [ ] (blog 候選)寫一篇:**「為什麼 fine-tuning 擋不住 Many-shot Jailbreaking — Anthropic 2024 paper 解讀」**(中文圈罕見題材)

@@ -156,7 +156,8 @@ System prompt 含有的敏感資訊(密鑰、商業邏輯、安全規則、内�
 - **Bing Chat "Sydney"(2023)** — 完整 system prompt 外洩,媒體大事件,Microsoft 公開致歉
 - **GitHub Copilot system prompt 多次外洩(2023-2024)** — 研究者用「翻譯任務」、「重複前文」等手法
 - **DAN 越獄(2023)** — 讓 ChatGPT 吐出 OpenAI 的 community guideline 全文
-- **DeepSeek R1 被 50% 成功率 jailbreak(2025 Q1)** — Cisco researchers,system prompt + safety rules 全外洩
+- **DeepSeek R1 演算法式 jailbreak,ASR 100%(2025 Q1)** — Cisco(Robust Intelligence)與 UPenn,在 HarmBench 抽出的 **50 個** prompt 上全數成功,對照 o1 擋下多數攻擊。([Cisco blog](https://blogs.cisco.com/security/evaluating-security-risk-in-deepseek-and-other-frontier-reasoning-models))
+  > 更正 2026-07-29:此處原記為「50% 成功率」,是把「抽樣 50 個 prompt」誤讀成成功率。實際是 50 個樣本、100% ASR。
 
 ### 偵測訊號
 

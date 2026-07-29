@@ -390,7 +390,7 @@ dispatch(result.recommended_action)
 
 ## 10. 對應筆記
 
-- [PortfolioIQ LV1](writeups/Agent_Breaker/L1/PortfolioIQ/PortfolioIQ_LV1.md) — 觸發本筆記的實戰
-- [Trippy Planner LV1](writeups/Agent_Breaker/L1/Trippy%20Planner/Trippy_Planner_LV1.md) — 對照組(free-form output 的 IPI 部分繞過)
+- PortfolioIQ LV1 逐關紀錄(私有)— 觸發本筆記的實戰
+- Trippy Planner LV1 逐關紀錄(私有)— 對照組(free-form output 的 IPI 部分繞過)
 - [paper_note_owasp_llm_top10_2026-05-03](paper_note_owasp_llm_top10_2026-05-03.md) §LLM01
 - [paper_note_ipi_greshake_2026-05-03](paper_note_ipi_greshake_2026-05-03.md)

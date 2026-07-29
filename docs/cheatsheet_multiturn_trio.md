@@ -154,7 +154,7 @@ Crescendo 推到第 3-4 輪後,加入:
 
 ## 6. 寫 writeup 時的標準術語
 
-每關打完寫 [agent_breaker_writeup.md](writeups/agent_breaker_writeup.md) 時用:
+每關打完寫 Agent Breaker 逐關紀錄(私有) 時用:
 
 ```markdown
 **主要攻擊家族**: Crescendo (Russinovich et al. 2024)
@@ -186,7 +186,7 @@ Crescendo 推到第 3-4 輪後,加入:
 
 - [ ] 我能說清楚 Crescendo / MSJ / Skeleton Key 的差異?(看 §1 表)
 - [ ] 我背得出 Crescendo 4 輪模板?(看 §2.3)
-- [ ] [agent_breaker_writeup.md](writeups/agent_breaker_writeup.md) 已開啟在副視窗?
+- [ ] Agent Breaker 逐關紀錄(私有) 已開啟在副視窗?
 - [ ] [cheatsheet_asi_top10.md](cheatsheet_asi_top10.md) 已開啟?
 - [ ] 心理準備好「**第一關失敗很正常**,記下為什麼比破關重要」?
 

@@ -258,7 +258,7 @@ Crescendo + Crescendomation 都已開源(PyRIT)。**直接拿來打 vendor**:
 | [paper_note_many_shot_jailbreaking_2026-05-04.md](paper_note_many_shot_jailbreaking_2026-05-04.md) | 同家族(多輪攻擊),但 MSJ 需要 API,Crescendo 不需要 |
 | [paper_note_owasp_llm_top10_2026-05-03.md](paper_note_owasp_llm_top10_2026-05-03.md) | LLM01 Direct PI 子類別「多輪攻擊」的代表論文 |
 | [paper_note_owasp_agentic_2026-05-03.md](paper_note_owasp_agentic_2026-05-03.md) | ASI01 Agent Goal Hijack 在多輪場景的實作 |
-| [agent_breaker_writeup.md](writeups/agent_breaker_writeup.md) | 進關時的主武器 — §1 攻擊家族表已列入 |
+| Agent Breaker 逐關紀錄(私有) | 進關時的主武器 — §1 攻擊家族表已列入 |
 
 ---
 
@@ -267,6 +267,6 @@ Crescendo + Crescendomation 都已開源(PyRIT)。**直接拿來打 vendor**:
 - [x] 讀完此 paper(Crescendo)
 - [x] 讀完 #5 Many-shot · #6 Skeleton Key
 - [x] 多輪攻擊三件套讀齊
-- [ ] **下一步:進 Agent Breaker 實戰**,在 [agent_breaker_writeup.md](writeups/agent_breaker_writeup.md) 邊打邊填
+- [ ] **下一步:進 Agent Breaker 實戰**,在 Agent Breaker 逐關紀錄(私有) 邊打邊填
 - [ ] 同時開 [cheatsheet_multiturn_trio.md](cheatsheet_multiturn_trio.md)(我下一步建立)做戰場速查
 - [ ] (後續)#8 Multimodal、#9 Unicode、#10 Low-resource 用到再讀,不必先讀

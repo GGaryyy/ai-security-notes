@@ -1,5 +1,7 @@
 # Plan — LangGraph Memory Poisoning PoC Repo
 
+> **⚠ 已被吸收(2026-06-13)**:範圍擴大為完整 agentic-RAG pipeline,本 plan 併為該專案的 **Stage 2(memory 站)**。這份保留作為 memory 站的細節參考,不再是獨立的待辦項目。
+>
 > **目標**:建一對「vulnerable / hardened」LangGraph demo,做為 blog + Talk + bounty report 的可重現實驗環境。
 > **觸發**:2026-05-06 與 Claude 對話,從 Lakera MindfulChat LV1 (76/100, MC-G payload) 推到真實世界 LangGraph 部署的 memory poisoning 攻擊鏈,確認這是當前未被廣泛認知的攻擊面。
 > **狀態**:Plan,未實作。下次有 6-10 hr blog/research 時段時啟動。

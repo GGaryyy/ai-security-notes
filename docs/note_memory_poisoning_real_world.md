@@ -19,7 +19,7 @@ Challenge 場景:攻擊者擁有 AI memory log 的 DB 寫入權,塞入 fake conv
 3. **Verbatim keyword density**(每段 "Winnie the Pooh" 全名 5-7 次)
 4. **Paragraph 敘事 > Bullet list** → 達 multi-sentence requirement
 
-→ 完整解析見 [MindfulChat LV1 writeup](writeups/Agent_Breaker/L1/MindfulChat/MindfulChat_LV1.md)。
+→ 完整解析在 MindfulChat LV1 的逐關紀錄裡,該紀錄維持私有(見 README「Notes on scope」)。
 
 ### 從 challenge 推到真實世界的問題
 
@@ -321,7 +321,7 @@ VI. 給 bounty hunter 的 checklist + 結語 (300)
 
 ## 8. 與本 vault 其他文件的關聯
 
-- [MindfulChat LV1 writeup](writeups/Agent_Breaker/L1/MindfulChat/MindfulChat_LV1.md) — MC-G payload 來源 + 設計原則
+- MindfulChat LV1 逐關紀錄(私有)— MC-G payload 來源 + 設計原則
 - [plan_langgraph_memory_poisoning_poc](plans/plan_langgraph_memory_poisoning_poc.md) — PoC repo 實作計畫
 - [note_structured_output_defense](note_structured_output_defense.md) — 對照防禦(structured output 是另一個強防禦)
 - [paper_note_owasp_agentic_2026-05-03](paper_note_owasp_agentic_2026-05-03.md) §ASI06 + §ASI08
